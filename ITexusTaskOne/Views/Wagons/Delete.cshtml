@@ -1,0 +1,44 @@
+﻿@model ITexusTaskOne.Models.Wagon
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удаление</h1>
+
+<h3>Вы уверены что хотите удалить этот вагон?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2" name="InventoryNumDT">Инвентарный номер</dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.InventoryNum)
+        </dd>
+        <dt class="col-sm-2">Модель</dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class="col-sm-2">Дата производства</dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProdDate)
+        </dd>
+        <dt class="col-sm-2">Дата начала эксплуатации</dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ExpDate)
+        </dd>
+        <dt class="col-sm-2">Вес</dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WagWeight)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="WagonID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" />
+
+        <button class="btn btn-primary" type="button" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <a style="color: white" asp-area="" asp-controller="Wagons" asp-action="Index">Назад</a>
+        </button>
+    </form>
+</div>

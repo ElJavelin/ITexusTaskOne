@@ -1,0 +1,52 @@
+﻿@model ITexusTaskOne.Models.Wagon
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Добавление нового вагона</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="InventoryNum" class="control-label">Инвентарный номер</label>
+                <input asp-for="InventoryNum" class="form-control" />
+                <span asp-validation-for="InventoryNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model" class="control-label">Модель</label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdDate" class="control-label">Дата производства</label>
+                <input asp-for="ProdDate" class="form-control" />
+                <span asp-validation-for="ProdDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpDate" class="control-label">Дата начала эксплуатации</label>
+                <input asp-for="ExpDate" class="form-control" />
+                <span asp-validation-for="ExpDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WagWeight" class="control-label">Вес</label>
+                <input asp-for="WagWeight" class="form-control" />
+                <span asp-validation-for="WagWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+                <button class="btn btn-primary" type="button" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <a style="color: white; text-decoration: none;" asp-area="" asp-controller="Wagons" asp-action="Index">Назад</a>
+                </button>
+            </div>          
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

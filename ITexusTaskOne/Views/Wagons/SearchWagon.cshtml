@@ -1,0 +1,24 @@
+﻿<h4>Поиск вагона</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ShowSearchWagon">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label for="SInventoryNum" class="control-label">Инвентарный номер</label>
+                <input name="SInventoryNum" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="SModel" class="control-label">Модель</label>
+                <input name="SModel" class="form-control" />
+            </div>     
+            <div class="form-group">
+                <input type="submit" value="Найти" class="btn btn-primary" />
+                <button class="btn btn-primary" type="button" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <a style="color: white; text-decoration: none;" asp-area="" asp-controller="Wagons" asp-action="Index">Назад</a>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

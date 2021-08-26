@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ITexusTaskOne.Models.Wagon>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Главная</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Инвентарный номер</th>
+            <th>Модель</th>
+            <th>Дата производства</th>
+            <th>Дата начала эксплуатации</th>
+            <th>Вес вагона</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InventoryNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WagWeight)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WagonID">Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.WagonID">Подробнее</a> |
+                <a asp-action="Delete" asp-route-id="@item.WagonID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
